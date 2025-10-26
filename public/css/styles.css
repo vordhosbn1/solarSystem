@@ -1,3 +1,9 @@
-/* body{
+#text-center{
     text-align: center;
-} */
+
+}
+
+img{
+    margin:auto;
+    display:flex
+}

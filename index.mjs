@@ -16,10 +16,16 @@ app.get('/', async (req, res) => {
    res.render('home.ejs', {randomImage})
 });
 
+
+
 app.get('/planet', (req, res) => {
    let planet_name = req.query.planetName;
    let planetInfo = solarSystem[`get${planet_name}`]();
    res.render('planetInfo.ejs', {planetInfo, planet_name});
+});
+
+app.get('/nasaPod', (req, res) => {
+    res.render('nasaPod.ejs')
 });
 
 app.listen(3000, () => {
