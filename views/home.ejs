@@ -2,14 +2,28 @@
 <html lang="en">
 
 <head>
-    <%- include("partials/head.ejs") %>
+  <%- include("partials/head.ejs") %>
 </head>
 
-<body>
-   <%- include("partials/nav.ejs") %>
+<body class="text-center">
+  <%- include("partials/nav.ejs") %>
 
-   <img src="<%=randomImage%>" width="400">
-    
+  <main class="container py-5">
+
+
+    <p style="max-width: 700px; margin: 0 auto 30px;">
+        Welcome to the Solar System page! Navigate through the nav bar to explore detailed information about each planet in
+        our solar system, including fascinating facts, images, and more. The NASA Picture of the Day uses the API provided by
+        NASA to bring you stunning images and insights from space exploration. 
+    </p>
+
+    <img 
+      src="<%= randImg %>" 
+      alt="Random Solar System Image" 
+      class="img-fluid rounded shadow"
+      style="max-width: 500px;">
+  </main>
+
+  <%- include("partials/foot.ejs") %>
 </body>
-
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("partials/head.ejs") %>
+</head>
+
+<body class="text-center">
+  <%- include("partials/nav.ejs") %>
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; text-align: left; padding: 10px;">
+
+    <div style="flex: 1; padding: 10px;">
+              <h2 class="text-center"><%= planet_name %></h2>
+
+      <br>
+      <%= planetInfo.def %>
+      <hr>
+      <br>
+      Link:
+      <a href="<%= planetInfo.link %>"><%= planetInfo.link %></a>
+      <br>
+      
+    </div>
+
+    <div style="flex: 1; padding: 10px; text-align: center;">
+      <img src="<%= planetInfo.image %>" width="300px">
+      <br>
+    </div>
+
+  </div>
+
+  <%- include("partials/foot.ejs") %>
+</body>
+
+</html>

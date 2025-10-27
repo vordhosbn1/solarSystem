@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("partials/head.ejs") %>
+</head>
+
+<body class="text-center">
+  <%- include("partials/nav.ejs") %>
+
+    <main class="container py-5">
+      <h2>NASA Picture of the Day</h2>
+
+      <% if (apod) { %>
+        <div class="mt-4">
+          <% if (apod.media_type==="image" ) { %>
+            <img src="<%= apod.url %>" alt="<%= apod.title %>" class="img-fluid rounded shadow"
+              style="max-width: 600px;">
+            <% } else if (apod.media_type==="video" ) { %>
+              <div class="ratio ratio-16x9" style="max-width: 600px; margin: 0 auto;">
+                <iframe src="<%= apod.url %>" title="<%= apod.title %>" allowfullscreen></iframe>
+              </div>
+              <% } %>
+
+                <h4 class="mt-3">
+                  <%= apod.title %>
+                </h4>
+                <p class="text-muted">
+                  <%= apod.date %>
+                </p>
+                <p class="text-start mx-auto" style="max-width: 800px;">
+                  <%= apod.explanation %>
+                </p>
+        </div>
+        <% } else { %>
+          <p class="mt-4 text-danger">Could not load NASA’s Picture of the Day.</p>
+          <% } %>
+    </main>
+
+    <%- include("partials/foot.ejs") %>
+</body>
+
+</html>
